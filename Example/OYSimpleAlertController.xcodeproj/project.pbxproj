@@ -7,14 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		266BF87B12C8A7AFA1A42C9A /* Pods_OYSimpleAlertController_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC6A7C0A3479DFDB25876D8B /* Pods_OYSimpleAlertController_Tests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		2F3915741BAE9B3900E562D9 /* OYSimpleAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3915731BAE9B3900E562D9 /* OYSimpleAlertController.swift */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
-		FED89126813B4416148155AA /* Pods_OYSimpleAlertController_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04472814EF325D26E39ED7B8 /* Pods_OYSimpleAlertController_Example.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,9 +27,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		04472814EF325D26E39ED7B8 /* Pods_OYSimpleAlertController_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OYSimpleAlertController_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		091736C1B3EF5BFEE83A63DD /* Pods-OYSimpleAlertController_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OYSimpleAlertController_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OYSimpleAlertController_Tests/Pods-OYSimpleAlertController_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		3C5EDD6603B2237166C1FB21 /* Pods-OYSimpleAlertController_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OYSimpleAlertController_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OYSimpleAlertController_Example/Pods-OYSimpleAlertController_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		2F3915731BAE9B3900E562D9 /* OYSimpleAlertController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OYSimpleAlertController.swift; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* OYSimpleAlertController_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OYSimpleAlertController_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -38,15 +35,12 @@
 		607FACDA1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		607FACDC1AFB9204008FA782 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		607FACDF1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		607FACE51AFB9204008FA782 /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = Tests.xctest; path = OYSimpleAlertController_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		607FACE51AFB9204008FA782 /* OYSimpleAlertController_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OYSimpleAlertController_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		62E3CB4D9022B2C1EABC5505 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		AC551DB0D29903332C2992A7 /* OYSimpleAlertController.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = OYSimpleAlertController.podspec; path = ../OYSimpleAlertController.podspec; sourceTree = "<group>"; };
 		ADC633A9070A6E11E380C0A9 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		BD641C45ED8AB1A4487B5EF4 /* Pods-OYSimpleAlertController_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OYSimpleAlertController_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-OYSimpleAlertController_Tests/Pods-OYSimpleAlertController_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		C605ECC7A5B7CC657CF601DB /* Pods-OYSimpleAlertController_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OYSimpleAlertController_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-OYSimpleAlertController_Example/Pods-OYSimpleAlertController_Example.release.xcconfig"; sourceTree = "<group>"; };
-		FC6A7C0A3479DFDB25876D8B /* Pods_OYSimpleAlertController_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OYSimpleAlertController_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,7 +48,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FED89126813B4416148155AA /* Pods_OYSimpleAlertController_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,32 +55,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				266BF87B12C8A7AFA1A42C9A /* Pods_OYSimpleAlertController_Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		30A536001894F04A770BC44E /* Pods */ = {
+		2F3915721BAE9B3900E562D9 /* OYSimpleAlertController */ = {
 			isa = PBXGroup;
 			children = (
-				3C5EDD6603B2237166C1FB21 /* Pods-OYSimpleAlertController_Example.debug.xcconfig */,
-				C605ECC7A5B7CC657CF601DB /* Pods-OYSimpleAlertController_Example.release.xcconfig */,
-				091736C1B3EF5BFEE83A63DD /* Pods-OYSimpleAlertController_Tests.debug.xcconfig */,
-				BD641C45ED8AB1A4487B5EF4 /* Pods-OYSimpleAlertController_Tests.release.xcconfig */,
+				2F3915731BAE9B3900E562D9 /* OYSimpleAlertController.swift */,
 			);
-			name = Pods;
+			name = OYSimpleAlertController;
+			path = ../OYSimpleAlertController;
 			sourceTree = "<group>";
 		};
 		607FACC71AFB9204008FA782 = {
 			isa = PBXGroup;
 			children = (
+				2F3915721BAE9B3900E562D9 /* OYSimpleAlertController */,
 				607FACF51AFB993E008FA782 /* Podspec Metadata */,
 				607FACD21AFB9204008FA782 /* Example for OYSimpleAlertController */,
 				607FACE81AFB9204008FA782 /* Tests */,
 				607FACD11AFB9204008FA782 /* Products */,
-				30A536001894F04A770BC44E /* Pods */,
 				EFEA811C3DBFE8E77F82FA01 /* Frameworks */,
 			);
 			sourceTree = "<group>";
@@ -96,7 +86,7 @@
 			isa = PBXGroup;
 			children = (
 				607FACD01AFB9204008FA782 /* OYSimpleAlertController_Example.app */,
-				607FACE51AFB9204008FA782 /* Tests.xctest */,
+				607FACE51AFB9204008FA782 /* OYSimpleAlertController_Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -153,8 +143,6 @@
 		EFEA811C3DBFE8E77F82FA01 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				04472814EF325D26E39ED7B8 /* Pods_OYSimpleAlertController_Example.framework */,
-				FC6A7C0A3479DFDB25876D8B /* Pods_OYSimpleAlertController_Tests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -166,12 +154,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 607FACEF1AFB9204008FA782 /* Build configuration list for PBXNativeTarget "OYSimpleAlertController_Example" */;
 			buildPhases = (
-				9708BE5C33AAD33C5B08DCD6 /* Check Pods Manifest.lock */,
 				607FACCC1AFB9204008FA782 /* Sources */,
 				607FACCD1AFB9204008FA782 /* Frameworks */,
 				607FACCE1AFB9204008FA782 /* Resources */,
-				1FB9C0F322C31148D99FF109 /* Embed Pods Frameworks */,
-				29D390258C4F4AA7FEF6060A /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -186,12 +171,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 607FACF21AFB9204008FA782 /* Build configuration list for PBXNativeTarget "OYSimpleAlertController_Tests" */;
 			buildPhases = (
-				8EB0C686F67583CCA06143D5 /* Check Pods Manifest.lock */,
 				607FACE11AFB9204008FA782 /* Sources */,
 				607FACE21AFB9204008FA782 /* Frameworks */,
 				607FACE31AFB9204008FA782 /* Resources */,
-				A25CED5370EC1EB241B0955D /* Embed Pods Frameworks */,
-				380FC7C38873A072D8F92F8D /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -200,7 +182,7 @@
 			);
 			name = OYSimpleAlertController_Tests;
 			productName = Tests;
-			productReference = 607FACE51AFB9204008FA782 /* Tests.xctest */;
+			productReference = 607FACE51AFB9204008FA782 /* OYSimpleAlertController_Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -209,6 +191,7 @@
 		607FACC81AFB9204008FA782 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0710;
 				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = CocoaPods;
 				TargetAttributes = {
@@ -260,105 +243,13 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		1FB9C0F322C31148D99FF109 /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OYSimpleAlertController_Example/Pods-OYSimpleAlertController_Example-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		29D390258C4F4AA7FEF6060A /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OYSimpleAlertController_Example/Pods-OYSimpleAlertController_Example-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		380FC7C38873A072D8F92F8D /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OYSimpleAlertController_Tests/Pods-OYSimpleAlertController_Tests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		8EB0C686F67583CCA06143D5 /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		9708BE5C33AAD33C5B08DCD6 /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		A25CED5370EC1EB241B0955D /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OYSimpleAlertController_Tests/Pods-OYSimpleAlertController_Tests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		607FACCC1AFB9204008FA782 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
+				2F3915741BAE9B3900E562D9 /* OYSimpleAlertController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -484,31 +375,30 @@
 		};
 		607FACF01AFB9204008FA782 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3C5EDD6603B2237166C1FB21 /* Pods-OYSimpleAlertController_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = OYSimpleAlertController/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
+				PRODUCT_BUNDLE_IDENTIFIER = "okysoft.demo.OYSimpleAlertController-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
 		};
 		607FACF11AFB9204008FA782 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C605ECC7A5B7CC657CF601DB /* Pods-OYSimpleAlertController_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = OYSimpleAlertController/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
+				PRODUCT_BUNDLE_IDENTIFIER = "okysoft.demo.OYSimpleAlertController-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
 		};
 		607FACF31AFB9204008FA782 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 091736C1B3EF5BFEE83A63DD /* Pods-OYSimpleAlertController_Tests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -528,7 +418,6 @@
 		};
 		607FACF41AFB9204008FA782 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BD641C45ED8AB1A4487B5EF4 /* Pods-OYSimpleAlertController_Tests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (

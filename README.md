@@ -1,15 +1,40 @@
 # OYSimpleAlertController
 
-[![CI Status](http://img.shields.io/travis/oyuk/OYSimpleAlertController.svg?style=flat)](https://travis-ci.org/oyuk/OYSimpleAlertController)
-[![Version](https://img.shields.io/cocoapods/v/OYSimpleAlertController.svg?style=flat)](http://cocoapods.org/pods/OYSimpleAlertController)
-[![License](https://img.shields.io/cocoapods/l/OYSimpleAlertController.svg?style=flat)](http://cocoapods.org/pods/OYSimpleAlertController)
-[![Platform](https://img.shields.io/cocoapods/p/OYSimpleAlertController.svg?style=flat)](http://cocoapods.org/pods/OYSimpleAlertController)
+OYSimpleAlertController is very simple Alert written in Swift.
+
+
+![alt tag](https://github.com/oyuk/OYSimpleAlertController/blob/master/Assets/OYSimpleAlertController.gif)
 
 ## Usage
+```Swift
+let alert = OYSimpleAlertController(title: "Title", message: "message")
+let defaultAction = OYAlertAction(title: "OK", actionStyle: .Default, actionHandler: {
+print("OK")
+})
 
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
+alert.addAction(defaultAction)
 
-## Requirements
+presentViewController(alert, animated: true, completion: nil)
+```
+## Design
+
+###Title
+```Swift
+alert.alertTitleColor = UIColor.whiteColor()
+alert.alertTitleFont = UIFont.boldSystemFontOfSize(23)
+alert.alertTitleBackgroundColor  = UIColor(red: 46/255.0, green: 204/255.0, blue: 113/255.0, alpha: 1.0)  
+``` 
+###Message   
+```Swift
+alert.messageColor = UIColor.blackColor()
+alert.messageFont = UIFont.systemFontOfSize(18)
+```
+###Button
+```Swift
+alert.buttonFont = UIFont.boldSystemFontOfSize(23)
+alert.buttonTextColor = UIColor.whiteColor()
+alert.buttonBackgroundColors[.Default] = UIColor(red: 3/255.0, green: 169/255.0, blue: 244/255.0, alpha: 1.0)
+```
 
 ## Installation
 
@@ -27,3 +52,4 @@ oyuk, okysoft68@gmail.com
 ## License
 
 OYSimpleAlertController is available under the MIT license. See the LICENSE file for more info.
+
