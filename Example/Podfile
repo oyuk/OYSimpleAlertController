@@ -1,0 +1,12 @@
+source 'https://github.com/CocoaPods/Specs.git'
+use_frameworks!
+
+target 'OYSimpleAlertController_Example', :exclusive => true do
+  pod "OYSimpleAlertController", :path => "../"
+end
+
+target 'OYSimpleAlertController_Tests', :exclusive => true do
+  pod "OYSimpleAlertController", :path => "../"
+
+  
+end
