@@ -12,91 +12,91 @@ let cornerRadius:CGFloat = 10
 
 class LunchAnimation:NSObject,UIViewControllerAnimatedTransitioning {
     
-    private var presenting = false
+    fileprivate var presenting = false
     
-    func transitionDuration(transitionContext: UIViewControllerContextTransitioning?) -> NSTimeInterval {
+    func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
         return 0.5
     }
     
-    func animateTransition(transitionContext: UIViewControllerContextTransitioning) {
+    func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
         presenting ? presentTransition(transitionContext) : dismissTransition(transitionContext)
     }
     
-    private func presentTransition(transitionContext: UIViewControllerContextTransitioning){
+    fileprivate func presentTransition(_ transitionContext: UIViewControllerContextTransitioning){
         
-        let fromVC = transitionContext.viewControllerForKey(UITransitionContextFromViewControllerKey)!
-        let toVC = transitionContext.viewControllerForKey(UITransitionContextToViewControllerKey) as! OYSimpleAlertController
-        toVC.contentView.transform = CGAffineTransformMakeScale(0.8, 0.8)
+        let fromVC = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.from)!
+        let toVC = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.to) as! OYSimpleAlertController
+        toVC.contentView.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
         
-        let containerView = transitionContext.containerView()
-        containerView!.insertSubview(toVC.view, aboveSubview: fromVC.view)
+        let containerView = transitionContext.containerView
+        containerView.insertSubview(toVC.view, aboveSubview: fromVC.view)
         
-        UIView.animateWithDuration(
+        UIView.animate(
             
-            transitionDuration(transitionContext),animations: { () -> Void in
+            withDuration: transitionDuration(using: transitionContext),animations: { () -> Void in
                 
-            }) { (finished) -> Void in
+            }, completion: { (finished) -> Void in
                 
-                UIView.animateWithDuration(0.4,
+                UIView.animate(withDuration: 0.4,
                     delay: 0,
                     usingSpringWithDamping: 0.5,
                     initialSpringVelocity: 1.0,
-                    options: UIViewAnimationOptions.AllowAnimatedContent,
+                    options: UIViewAnimationOptions.allowAnimatedContent,
                     animations: { () -> Void in
                         toVC.backgroundView.alpha = 1
                         toVC.contentView.alpha = 1.0
-                        toVC.contentView.transform = CGAffineTransformIdentity
+                        toVC.contentView.transform = CGAffineTransform.identity
                     }, completion: { (finish) -> Void in
                         transitionContext.completeTransition(true)
                 })
-        }
+        }) 
     }
     
-    private func dismissTransition(transitionContext: UIViewControllerContextTransitioning){
+    fileprivate func dismissTransition(_ transitionContext: UIViewControllerContextTransitioning){
         
-        let fromVC = transitionContext.viewControllerForKey(UITransitionContextFromViewControllerKey) as! OYSimpleAlertController
+        let fromVC = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.from) as! OYSimpleAlertController
         
-        UIView.animateWithDuration(
+        UIView.animate(
             
-            transitionDuration(transitionContext),animations: { () -> Void in
+            withDuration: transitionDuration(using: transitionContext),animations: { () -> Void in
                 
-            }) { (finished) -> Void in
+            }, completion: { (finished) -> Void in
                 
-                UIView.animateWithDuration(0.4,
+                UIView.animate(withDuration: 0.4,
                     delay: 0,
                     usingSpringWithDamping: 0.5,
                     initialSpringVelocity: 1.0,
-                    options: UIViewAnimationOptions.AllowAnimatedContent,
+                    options: UIViewAnimationOptions.allowAnimatedContent,
                     animations: { () -> Void in
                         fromVC.backgroundView.alpha = 0
                         fromVC.contentView.alpha = 0
-                        fromVC.contentView.transform = CGAffineTransformMakeScale(0.8, 0.8)
+                        fromVC.contentView.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
                     }, completion: { (finish) -> Void in
                         transitionContext.completeTransition(true)
                 })
-        }
+        }) 
         
     }
 }
 
 extension UIScreen {
     class func screenWidth()->CGFloat {
-        return self.mainScreen().bounds.width
+        return self.main.bounds.width
     }
     
     class func screenHeight()->CGFloat {
-        return self.mainScreen().bounds.size.height
+        return self.main.bounds.size.height
     }
 }
 
 public enum OYActionStyle:Int {
-    case Default,Cancel
+    case `default`,cancel
 }
 
-public class OYAlertAction:NSObject {
-    private var title:String!
-    private var actionStyle:OYActionStyle!
-    private var actionHandler:(()->Void)?
+open class OYAlertAction:NSObject {
+    fileprivate var title:String!
+    fileprivate var actionStyle:OYActionStyle!
+    fileprivate var actionHandler:(()->Void)?
     
     convenience public init(title:String,actionStyle:OYActionStyle,actionHandler:(()->Void)?){
         self.init()
@@ -106,26 +106,26 @@ public class OYAlertAction:NSObject {
     }
 }
 
-public class OYSimpleAlertController: UIViewController,UIViewControllerTransitioningDelegate {
+open class OYSimpleAlertController: UIViewController,UIViewControllerTransitioningDelegate {
    
-    private class OYAlertTitleLabel:UILabel {
+    fileprivate class OYAlertTitleLabel:UILabel {
         override func layoutSubviews() {
             super.layoutSubviews()
             
             let maskPath = UIBezierPath(roundedRect: self.bounds,
-                byRoundingCorners: [UIRectCorner.TopLeft , UIRectCorner.TopRight],
+                byRoundingCorners: [UIRectCorner.topLeft , UIRectCorner.topRight],
                 cornerRadii: CGSize(width: cornerRadius, height: cornerRadius))
             
             let maskLayer = CAShapeLayer()
             maskLayer.frame = self.bounds
-            maskLayer.path = maskPath.CGPath
+            maskLayer.path = maskPath.cgPath
             
             self.layer.mask = maskLayer
         }
     }
     
-    private class OYAlertTextView:UITextView {
-        override func canBecomeFirstResponder() -> Bool {
+    fileprivate class OYAlertTextView:UITextView {
+        override var canBecomeFirstResponder : Bool {
             return false
         }
     }
@@ -134,39 +134,39 @@ public class OYSimpleAlertController: UIViewController,UIViewControllerTransitio
         var oyAlertAction:OYAlertAction!
     }
 
-    private var alertTitle = ""
-    private var message = ""
+    fileprivate var alertTitle = ""
+    fileprivate var message = ""
     
-    private let backgroundView = UIView()
-    public var backgroundViewColor:UIColor = UIColor.blackColor().colorWithAlphaComponent(0.3)
+    fileprivate let backgroundView = UIView()
+    open var backgroundViewColor:UIColor = UIColor.black.withAlphaComponent(0.3)
     
-    private let contentView = UIView()
+    fileprivate let contentView = UIView()
     
-    private let alertTitleLabel = OYAlertTitleLabel()
-    private let alertTitleLabelHeight:CGFloat = 40
-    public var alertTitleColor:UIColor = UIColor.whiteColor()
-    public var alertTitleFont:UIFont = UIFont.boldSystemFontOfSize(23)
-    public var alertTitleBackgroundColor = UIColor(red: 46/255.0, green: 204/255.0, blue: 113/255.0, alpha: 1.0)
+    fileprivate let alertTitleLabel = OYAlertTitleLabel()
+    fileprivate let alertTitleLabelHeight:CGFloat = 40
+    open var alertTitleColor:UIColor = UIColor.white
+    open var alertTitleFont:UIFont = UIFont.boldSystemFont(ofSize: 23)
+    open var alertTitleBackgroundColor = UIColor(red: 46/255.0, green: 204/255.0, blue: 113/255.0, alpha: 1.0)
     
-    private let messageTextView = OYAlertTextView()
-    private let maxMessageTextViewheight:CGFloat = UIScreen.screenHeight() * 0.7
-    public var messageColor:UIColor = UIColor.blackColor()
-    public var messageFont:UIFont = UIFont.systemFontOfSize(18)
+    fileprivate let messageTextView = OYAlertTextView()
+    fileprivate let maxMessageTextViewheight:CGFloat = UIScreen.screenHeight() * 0.7
+    open var messageColor:UIColor = UIColor.black
+    open var messageFont:UIFont = UIFont.systemFont(ofSize: 18)
     
-    private var actionButtons:[OYActionButton] = []
-    private let buttonHeight:CGFloat = 40
-    private let buttonMargin:CGFloat = 5
-    public var buttonFont:UIFont = UIFont.boldSystemFontOfSize(23)
-    public var buttonTextColor:UIColor = UIColor.whiteColor()
-    public var buttonBackgroundColors:[OYActionStyle:UIColor] = [
-        .Default:UIColor(red: 3/255.0, green: 169/255.0, blue: 244/255.0, alpha: 1.0),
-        .Cancel :UIColor(red: 231/255.0, green: 76/255.0, blue: 60/255.0 , alpha: 1.0)
+    fileprivate var actionButtons:[OYActionButton] = []
+    fileprivate let buttonHeight:CGFloat = 40
+    fileprivate let buttonMargin:CGFloat = 5
+    open var buttonFont:UIFont = UIFont.boldSystemFont(ofSize: 23)
+    open var buttonTextColor:UIColor = UIColor.white
+    open var buttonBackgroundColors:[OYActionStyle:UIColor] = [
+        .default:UIColor(red: 3/255.0, green: 169/255.0, blue: 244/255.0, alpha: 1.0),
+        .cancel :UIColor(red: 231/255.0, green: 76/255.0, blue: 60/255.0 , alpha: 1.0)
     ]
     
-    private let alertWidth:CGFloat = UIScreen.screenWidth() - 50
-    private let maxButtonNum = 2
+    fileprivate let alertWidth:CGFloat = UIScreen.screenWidth() - 50
+    fileprivate let maxButtonNum = 2
     
-    private let animater = LunchAnimation()
+    fileprivate let animater = LunchAnimation()
     
     convenience public init(title:String,message:String) {
         self.init()
@@ -177,15 +177,15 @@ public class OYSimpleAlertController: UIViewController,UIViewControllerTransitio
         self.transitioningDelegate = self
         self.definesPresentationContext = true
         self.providesPresentationContextTransitionStyle = true
-        self.modalPresentationStyle = .Custom
+        self.modalPresentationStyle = .custom
     }
     
-    override public func viewWillAppear(animated: Bool) {
+    override open func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setup()
     }
     
-    private func setup(){
+    fileprivate func setup(){
         setUpBackgroundView()
         setUpContentView()
         setUpTitle()
@@ -194,66 +194,66 @@ public class OYSimpleAlertController: UIViewController,UIViewControllerTransitio
         modifyContentViewSize()
     }
     
-    private func modifyContentViewSize(){
-        contentView.frame.size = CGSizeMake(alertWidth, alertTitleLabelHeight + messageTextView.frame.height + buttonHeight + buttonMargin * 2)
+    fileprivate func modifyContentViewSize(){
+        contentView.frame.size = CGSize(width: alertWidth, height: alertTitleLabelHeight + messageTextView.frame.height + buttonHeight + buttonMargin * 2)
         contentView.center = self.view.center
     }
     
-    private func setUpBackgroundView(){
+    fileprivate func setUpBackgroundView(){
         backgroundView.frame = self.view.bounds
         backgroundView.backgroundColor = backgroundViewColor
         
         self.view.addSubview(backgroundView)
     }
     
-    private func setUpContentView(){
-        contentView.backgroundColor = UIColor.whiteColor()
+    fileprivate func setUpContentView(){
+        contentView.backgroundColor = UIColor.white
         contentView.layer.cornerRadius = cornerRadius
 
         self.view.addSubview(contentView)
     }
     
-    private func setUpTitle(){
-        alertTitleLabel.frame = CGRectMake(0, 0, alertWidth, alertTitleLabelHeight)
+    fileprivate func setUpTitle(){
+        alertTitleLabel.frame = CGRect(x: 0, y: 0, width: alertWidth, height: alertTitleLabelHeight)
         alertTitleLabel.text = alertTitle
         alertTitleLabel.font = alertTitleFont
         alertTitleLabel.textColor = alertTitleColor
-        alertTitleLabel.textAlignment = .Center
+        alertTitleLabel.textAlignment = .center
         alertTitleLabel.backgroundColor = alertTitleBackgroundColor
         alertTitleLabel.layer.cornerRadius = cornerRadius
         
         contentView.addSubview(alertTitleLabel)
     }
     
-    private func setUpMessage(){
-        messageTextView.frame = CGRectMake(0, alertTitleLabelHeight, alertWidth, 0)
+    fileprivate func setUpMessage(){
+        messageTextView.frame = CGRect(x: 0, y: alertTitleLabelHeight, width: alertWidth, height: 0)
         messageTextView.text = message
         messageTextView.font = messageFont
         messageTextView.textColor = messageColor
-        messageTextView.editable = false
+        messageTextView.isEditable = false
 
         contentView.addSubview(messageTextView)
         
         messageTextView.sizeToFit()
         if messageTextView.frame.height > maxMessageTextViewheight {
-            messageTextView.frame.size = CGSizeMake(alertWidth,maxMessageTextViewheight)
+            messageTextView.frame.size = CGSize(width: alertWidth,height: maxMessageTextViewheight)
         }
     }
     
-    private func setUpButton(){
+    fileprivate func setUpButton(){
         let buttonOriginY = alertTitleLabelHeight + messageTextView.frame.height + buttonMargin
         let buttonWidth = actionButtons.count == 2 ? (alertWidth - buttonMargin * 3)/2 : alertWidth - buttonMargin * 2
 
         for button in actionButtons {
-            button.frame = CGRectMake(
-                CGFloat(button.tag) * (buttonWidth + buttonMargin) + buttonMargin,
-                buttonOriginY,
-                buttonWidth,
-                buttonHeight)
-            button.setTitle(button.oyAlertAction.title, forState: .Normal)
+            button.frame = CGRect(
+                x: CGFloat(button.tag) * (buttonWidth + buttonMargin) + buttonMargin,
+                y: buttonOriginY,
+                width: buttonWidth,
+                height: buttonHeight)
+            button.setTitle(button.oyAlertAction.title, for: UIControlState())
             button.backgroundColor = buttonBackgroundColors[button.oyAlertAction.actionStyle]
-            button.addTarget(self, action: "action:", forControlEvents: .TouchUpInside)
-            button.setTitleColor(buttonTextColor, forState: .Normal)
+            button.addTarget(self, action: #selector(OYSimpleAlertController.action(_:)), for: .touchUpInside)
+            button.setTitleColor(buttonTextColor, for: UIControlState())
             button.titleLabel?.font = buttonFont
             button.layer.cornerRadius = cornerRadius
             
@@ -261,7 +261,7 @@ public class OYSimpleAlertController: UIViewController,UIViewControllerTransitio
         }
     }
     
-    public func addAction(action:OYAlertAction) {
+    open func addAction(_ action:OYAlertAction) {
         assert(actionButtons.count < maxButtonNum, "OYAlertAction must be \(maxButtonNum) or less")
         
         let button = OYActionButton()
@@ -271,21 +271,21 @@ public class OYSimpleAlertController: UIViewController,UIViewControllerTransitio
         actionButtons.append(button)
     }
     
-    func action(sender: OYActionButton){
+    func action(_ sender: OYActionButton){
         let button = sender as OYActionButton
         if let action = button.oyAlertAction.actionHandler {
             action()
         }
         
-        self.dismissViewControllerAnimated(true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
     }
     
-    public func animationControllerForPresentedController(presented: UIViewController, presentingController presenting: UIViewController, sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+    open func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         animater.presenting = true
         return animater
     }
     
-    public func animationControllerForDismissedController(dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+    open func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         animater.presenting = false
         return animater
     }

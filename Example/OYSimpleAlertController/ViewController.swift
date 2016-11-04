@@ -14,33 +14,33 @@ class ViewController: UIViewController {
     let message =  "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, "
     let message2 = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,"
     
-    @IBAction func showOneButtonAlert(sender: AnyObject) {
+    @IBAction func showOneButtonAlert(_ sender: AnyObject) {
         let alert = OYSimpleAlertController(title: "Title", message: message2)
         
-        let defaultAction = OYAlertAction(title: "OK", actionStyle: .Default, actionHandler: {
+        let defaultAction = OYAlertAction(title: "OK", actionStyle: .default, actionHandler: {
             print("OK")
         })
         
         alert.addAction(defaultAction)
         
-        presentViewController(alert, animated: true, completion: nil)
+        present(alert, animated: true, completion: nil)
     }
     
-    @IBAction func showTwoButtonAlert(sender: AnyObject) {
+    @IBAction func showTwoButtonAlert(_ sender: AnyObject) {
         let alert = OYSimpleAlertController(title: "Title", message: message)
         
-        let defaultAction = OYAlertAction(title: "OK", actionStyle: .Default, actionHandler: {
+        let defaultAction = OYAlertAction(title: "OK", actionStyle: .default, actionHandler: {
             print("OK")
         })
         
-        let cancelAction = OYAlertAction(title: "Cancel", actionStyle: .Cancel, actionHandler: {
+        let cancelAction = OYAlertAction(title: "Cancel", actionStyle: .cancel, actionHandler: {
             print("Cancel")
         })
         
         alert.addAction(defaultAction)
         alert.addAction(cancelAction)
         
-        presentViewController(alert, animated: true, completion: nil)
+        present(alert, animated: true, completion: nil)
     }
 
 }
